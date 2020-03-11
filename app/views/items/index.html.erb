@@ -6,19 +6,19 @@
         <%= link_to 'new', 'items/new' %>
         <table>
             <tr>
-                <th>Name</th>
-                <th>Category</th>
-                <th>Status</th>
-                <th></th>
-                <th></th>
+                <th colspan="10">Name</th>
+                <th colspan="10">Category</th>
+                <th colspan="4">Status</th>
+                <th colspan="2"></th>
+                <th colspan="2"></th>
             </tr>
             <% @items.each do |item| %>
                 <tr>
-                <td>| <%= item.description %> |</td>
-                <td><%= item.category.category_name %> |</td>
-                <td><%= item.status %> |</td>
-                <td><%= link_to 'Dismiss', 'items/dismiss' %><td>
-                <td><%= link_to 'Open', 'items/fulfill' %><td>
+                <td colspan="10"><%= item.description %> </td>
+                <td colspan="10"><%= item.category.category_name %> </td>
+                <td colspan="4"><%= item.status %> </td>
+                <td colspan="2"><%= link_to 'Dismiss', "items/dismiss?id=#{item.id}" %><td>
+                <td colspan="2"><%= link_to 'Fulfill', "items/fulfill?id=#{item.id}" %><td>
                 </tr>
             <% end %>
         </table>
