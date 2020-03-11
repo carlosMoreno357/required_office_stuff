@@ -3,7 +3,17 @@
     <head></head>
     <body>
         <h2>Insert a new supply need</h2>
-        <%= link_to '<- Back', 'item/index' %>
-        
+        <%= link_to '<- Back', '/' %>
+
+        <%= form_with(url: "/items/create", method: "post") do %>
+            <%= label_tag(:description, "Item description:") %>
+            <%= text_field_tag(:description) %>
+            <select name="category" id="category">
+            <% @categories.each do |category| %> 
+                <option value="<%= category.id %>" selected="<%= category.category_name %>" ><%= category.category_name %></option>
+            <% end %>
+            </select>
+            <%= submit_tag("Save") %>
+        <% end %>
     </body>
 </html>
