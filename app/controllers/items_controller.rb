@@ -12,4 +12,16 @@ class ItemsController < ActionController::Base
         redirect_to '/'
     end
 
+    def fulfill
+        item=Item.find_by(id: params[:id])
+        item.update(status: 0)
+        redirect_to '/'
+    end
+
+    def dismiss
+        item=Item.find_by(id: params[:id])
+        item.update(status: 2)
+        redirect_to '/'
+    end
+
 end
