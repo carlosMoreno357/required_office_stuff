@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <h1>Office Supplies Needs</h1>
+        <%= link_to 'new', 'items/new' %>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Category</th>
+                <th>Status</th>
+                <th></th>
+                <th></th>
+            </tr>
+            <% @items.each do |item| %>
+                <tr>
+                <td>| <%= item.description %> |</td>
+                <td><%= item.category.category_name %> |</td>
+                <td><%= item.status %> |</td>
+                <td><%= link_to 'Dismiss', 'items/dismiss' %><td>
+                <td><%= link_to 'Open', 'items/fulfill' %><td>
+                </tr>
+            <% end %>
+        </table>
+    </body>
+</html>
