@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 2020_03_11_202643) do
   create_table "items", force: :cascade do |t|
     t.string "description"
     t.integer "status"
+    t.text "comment"
     t.integer "category_id", null: false
     t.index ["category_id"], name: "index_items_on_category_id"
   end

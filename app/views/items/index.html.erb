@@ -3,6 +3,18 @@
     <head></head>
     <body>
         <h1>Office Supplies Needs</h1>
+
+        <%= form_with(url: "/items/index", method: "get") do %>
+            <label for="filter">Filter:</label>
+            <select name="filter" id="filter">
+                <option value = "0" selected>- none -</option>
+                <option value = "1">Open</option>
+                <option value = "2">Fulfilled</option>
+                <option value = "3">Dismissed</option>
+            </select>
+         <%= submit_tag("Filter") %>
+        <% end %>
+
         <%= link_to 'new', 'items/new' %>
         <table>
             <tr>
@@ -11,14 +23,16 @@
                 <th colspan="4">Status</th>
                 <th colspan="2"></th>
                 <th colspan="2"></th>
+                <th colspan="2"></th>
             </tr>
             <% @items.each do |item| %>
                 <tr>
                 <td colspan="10"><%= item.description %> </td>
                 <td colspan="10"><%= item.category.category_name %> </td>
                 <td colspan="4"><%= item.status %> </td>
-                <td colspan="2"><%= link_to 'Dismiss', "items/dismiss?id=#{item.id}" %><td>
-                <td colspan="2"><%= link_to 'Fulfill', "items/fulfill?id=#{item.id}" %><td>
+                <td colspan="2"><%= link_to 'Dismiss', "/items/dismiss?id=#{item.id}" %><td>
+                <td colspan="2"><%= link_to 'Fulfill', "/items/fulfill?id=#{item.id}" %><td>
+                <td colspan="2"><%= link_to 'Comment', "/items/comment?id=#{item.id}" %><td>
                 </tr>
             <% end %>
         </table>
