@@ -4,7 +4,6 @@
     <body>
         <h2>Insert a new supply need</h2>
         <%= link_to '<- Back', '/' %>
-
         <%= form_with(url: "/items/create", method: "post") do %>
             <%= label_tag(:description, "Item description:") %>
             <%= text_field_tag(:description) %>

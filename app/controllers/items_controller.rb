@@ -1,6 +1,16 @@
 class ItemsController < ActionController::Base
     def index
-        @items = Item.all
+        case params[:filter]
+        when "1"
+            @items = Item.where(:status => "open")
+        when "2"
+            @items = Item.where(:status => "fulfilled")
+        when "3"
+            @items = Item.where(:status => "dismissed")
+        else
+            @items = Item.all
+        end
+        
     end
 
     def new
@@ -21,6 +31,16 @@ class ItemsController < ActionController::Base
     def dismiss
         item=Item.find_by(id: params[:id])
         item.update(status: 2)
+        redirect_to '/'
+    end
+
+    def comment
+        @item=item=Item.find_by(id: params[:id])
+    end
+
+    def create_comment
+        item=Item.find_by(id: params[:id])
+        item.update(comment: params[:comment])
         redirect_to '/'
     end
 

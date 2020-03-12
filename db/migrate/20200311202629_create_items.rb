@@ -3,6 +3,7 @@ class CreateItems < ActiveRecord::Migration[6.0]
     create_table :items do |t|
       t.string :description
       t.integer :status
+      t.text :comment, null: true
       t.references :category, null:false, foreign_key: {to_table: :categories}
     end
   end
