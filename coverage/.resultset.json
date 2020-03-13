@@ -1,0 +1,229 @@
+{
+  "Unit Tests": {
+    "coverage": {
+      "/Users/carlosmorenosalazar/challenges_rails/required_office_stuff/app/controllers/items_controller.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          4,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          0,
+          0,
+          null,
+          null,
+          1,
+          0,
+          0,
+          0,
+          null,
+          null,
+          1,
+          0,
+          0,
+          0,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          0,
+          0,
+          0,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/carlosmorenosalazar/challenges_rails/required_office_stuff/app/models/item.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/carlosmorenosalazar/challenges_rails/required_office_stuff/app/models/application_record.rb": {
+        "lines": [
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/carlosmorenosalazar/challenges_rails/required_office_stuff/app/models/category.rb": {
+        "lines": [
+          1,
+          1,
+          null
+        ]
+      }
+    },
+    "timestamp": 1584116074
+  },
+  "RSpec": {
+    "coverage": {
+      "/Users/carlosmorenosalazar/challenges_rails/required_office_stuff/app/models/item.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/carlosmorenosalazar/challenges_rails/required_office_stuff/app/models/application_record.rb": {
+        "lines": [
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/carlosmorenosalazar/challenges_rails/required_office_stuff/app/models/category.rb": {
+        "lines": [
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/carlosmorenosalazar/challenges_rails/required_office_stuff/app/controllers/items_controller.rb": {
+        "lines": [
+          1,
+          1,
+          4,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          0,
+          0,
+          null,
+          null,
+          1,
+          0,
+          0,
+          0,
+          null,
+          null,
+          1,
+          0,
+          0,
+          0,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          0,
+          0,
+          0,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/carlosmorenosalazar/challenges_rails/required_office_stuff/app/mailers/application_mailer.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/carlosmorenosalazar/challenges_rails/required_office_stuff/app/jobs/application_job.rb": {
+        "lines": [
+          0,
+          null,
+          null,
+          null,
+          null,
+          null,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/carlosmorenosalazar/challenges_rails/required_office_stuff/app/controllers/application_controller.rb": {
+        "lines": [
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/carlosmorenosalazar/challenges_rails/required_office_stuff/app/controllers/coverages_controller.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/carlosmorenosalazar/challenges_rails/required_office_stuff/app/helpers/application_helper.rb": {
+        "lines": [
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/carlosmorenosalazar/challenges_rails/required_office_stuff/app/channels/application_cable/connection.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/carlosmorenosalazar/challenges_rails/required_office_stuff/app/channels/application_cable/channel.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      }
+    },
+    "timestamp": 1584120599
+  }
+}

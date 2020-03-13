@@ -9,4 +9,9 @@ Rails.application.routes.draw do
 
   post 'items/create', to: "items#create"
   post 'items/create_comment', to: "items#create_comment"
+  
+  if Rails.env.development?
+    get '/coverage', :to => redirect('/coverage/index.html')
+  end
+  
 end
