@@ -10,7 +10,6 @@ class ItemsController < ActionController::Base
         else
             @items = Item.all
         end
-        
     end
 
     def new
@@ -19,7 +18,7 @@ class ItemsController < ActionController::Base
 
     def create
         Item.create(description:params[:description ],category_id: params[:category].to_i, status: 1)
-        redirect_to '/'
+        redirect_to(root_path, status: :created)
     end
 
     def fulfill
@@ -41,7 +40,7 @@ class ItemsController < ActionController::Base
     def create_comment
         item=Item.find_by(id: params[:id])
         item.update(comment: params[:comment])
-        redirect_to '/'
+        redirect_to(root_path, status: 201)
     end
 
 end
