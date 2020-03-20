@@ -1,7 +1,8 @@
 require 'test_helper'
 class ItemTest < ActiveSupport::TestCase
-  test 'item has a valid description, category and status' do
-    item=Item.new(description: 'valid_description', category_id: 1, status: 1 )
+  test 'item has a valid description, category, status and belongs to a user' do
+    user = User.create(email: "test@testmail.com", password: "test_password")
+    item=Item.create(description: 'valid_description', category_id: 1, status: 1, user_id: user.id )
     assert item.valid?
   end
 
@@ -11,8 +12,8 @@ class ItemTest < ActiveSupport::TestCase
   end
 
   test 'item updated with a valid comment' do
-    item=Item.new(description: 'valid_description', category_id: 1, status: 1 )
-    item.update(comment:'test comment')
-    assert item.valid?
+    item=Item.create(description: 'valid_description', category_id: 1, status: 1, user_id: 1)
+    update = item.update(comment:'test comment')
+    assert update_truthy
   end
 end

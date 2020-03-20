@@ -80,8 +80,220 @@
   },
   "RSpec": {
     "coverage": {
-      "/Users/carlosmorenosalazar/challenges_rails/required_office_stuff/app/models/item.rb": {
+      "/home/amperio/required_office_stuff/test/controllers/items_controller_test.rb": {
         "lines": [
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/home/amperio/required_office_stuff/test/models/category_test.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/home/amperio/required_office_stuff/test/models/item_test.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/home/amperio/required_office_stuff/test/models/users_test.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/home/amperio/required_office_stuff/app/controllers/application_controller.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          null
+        ]
+      },
+      "/home/amperio/required_office_stuff/app/controllers/items_controller.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          0,
+          null,
+          0,
+          0,
+          null,
+          0,
+          null,
+          null,
+          0,
+          0,
+          null,
+          0,
+          null,
+          null,
+          0,
+          0,
+          null,
+          0,
+          null,
+          null,
+          0,
+          0,
+          null,
+          0,
+          null,
+          null,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          0,
+          0,
+          null,
+          null,
+          1,
+          0,
+          0,
+          0,
+          null,
+          null,
+          1,
+          0,
+          0,
+          0,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          0,
+          0,
+          0,
+          null,
+          null,
+          1,
+          5,
+          null,
+          null,
+          1,
+          5,
+          null,
+          null,
+          1,
+          5,
+          null,
+          null
+        ]
+      },
+      "/home/amperio/required_office_stuff/app/models/user.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "/home/amperio/required_office_stuff/app/models/application_record.rb": {
+        "lines": [
+          1,
+          1,
+          null
+        ]
+      },
+      "/home/amperio/required_office_stuff/app/models/category.rb": {
+        "lines": [
+          1,
+          1,
+          null
+        ]
+      },
+      "/home/amperio/required_office_stuff/app/models/item.rb": {
+        "lines": [
+          1,
           1,
           1,
           1,
@@ -89,81 +301,7 @@
           null
         ]
       },
-      "/Users/carlosmorenosalazar/challenges_rails/required_office_stuff/app/models/application_record.rb": {
-        "lines": [
-          1,
-          1,
-          null
-        ]
-      },
-      "/Users/carlosmorenosalazar/challenges_rails/required_office_stuff/app/models/category.rb": {
-        "lines": [
-          1,
-          1,
-          null
-        ]
-      },
-      "/Users/carlosmorenosalazar/challenges_rails/required_office_stuff/app/controllers/items_controller.rb": {
-        "lines": [
-          1,
-          1,
-          4,
-          null,
-          1,
-          null,
-          1,
-          null,
-          1,
-          null,
-          1,
-          null,
-          null,
-          null,
-          1,
-          1,
-          null,
-          null,
-          1,
-          0,
-          0,
-          null,
-          null,
-          1,
-          0,
-          0,
-          0,
-          null,
-          null,
-          1,
-          0,
-          0,
-          0,
-          null,
-          null,
-          1,
-          0,
-          null,
-          null,
-          1,
-          0,
-          0,
-          0,
-          null,
-          null,
-          null
-        ]
-      },
-      "/Users/carlosmorenosalazar/challenges_rails/required_office_stuff/app/mailers/application_mailer.rb": {
-        "lines": [
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/Users/carlosmorenosalazar/challenges_rails/required_office_stuff/app/jobs/application_job.rb": {
+      "/home/amperio/required_office_stuff/app/jobs/application_job.rb": {
         "lines": [
           0,
           null,
@@ -176,34 +314,7 @@
         "branches": {
         }
       },
-      "/Users/carlosmorenosalazar/challenges_rails/required_office_stuff/app/controllers/application_controller.rb": {
-        "lines": [
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/Users/carlosmorenosalazar/challenges_rails/required_office_stuff/app/controllers/coverages_controller.rb": {
-        "lines": [
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/Users/carlosmorenosalazar/challenges_rails/required_office_stuff/app/helpers/application_helper.rb": {
-        "lines": [
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/Users/carlosmorenosalazar/challenges_rails/required_office_stuff/app/channels/application_cable/connection.rb": {
+      "/home/amperio/required_office_stuff/app/channels/application_cable/channel.rb": {
         "lines": [
           0,
           0,
@@ -213,7 +324,74 @@
         "branches": {
         }
       },
-      "/Users/carlosmorenosalazar/challenges_rails/required_office_stuff/app/channels/application_cable/channel.rb": {
+      "/home/amperio/required_office_stuff/app/channels/application_cable/connection.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/home/amperio/required_office_stuff/app/controllers/users_controller.rb": {
+        "lines": [
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/home/amperio/required_office_stuff/app/controllers/sessions_controller.rb": {
+        "lines": [
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          null,
+          null,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/home/amperio/required_office_stuff/app/mailers/application_mailer.rb": {
         "lines": [
           0,
           0,
@@ -224,6 +402,6 @@
         }
       }
     },
-    "timestamp": 1584120599
+    "timestamp": 1584685402
   }
 }
