@@ -3,8 +3,9 @@
     <head></head>
     <body>
         <h1>Office Supplies Needs</h1>
-
-        <%= form_with(url: "/items/index", method: "get") do %>
+        Signed in as <%= current_user.email%> | <%= link_to "Logout", :logout %>
+      
+        <%= form_with(url: :items_index, method: "get") do %>
             <label for="filter">Filter:</label>
             <select name="filter" id="filter">
                 <option value = "0" selected>- none -</option>
@@ -15,7 +16,7 @@
          <%= submit_tag("Filter") %>
         <% end %>
 
-        <%= link_to 'new', 'items/new' %>
+        <%= link_to :new, :items_new %>
         <table>
             <tr>
                 <th colspan="10">Name</th>
@@ -28,7 +29,7 @@
             <% @items.each do |item| %>
                 <tr>
                 <td colspan="10"><%= item.description %> </td>
-                <td colspan="10"><%= item.category.category_name %> </td>
+                <td style="color: <%= item.category.colour%>" colspan="10"><%= item.category.category_name %> </td>
                 <td colspan="4"><%= item.status %> </td>
                 <td colspan="2"><%= link_to 'Dismiss', "/items/dismiss?id=#{item.id}" %><td>
                 <td colspan="2"><%= link_to 'Fulfill', "/items/fulfill?id=#{item.id}" %><td>

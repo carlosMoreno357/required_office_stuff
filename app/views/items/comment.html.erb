@@ -3,10 +3,10 @@
     <head></head>
     <body>
         <h2>Insert a comment</h2>
-        <%= link_to '<- Back', '/' %>
+        <%= link_to '<- Back', root_path %>
         <p>For supply: <%= @item.description%></p>
         
-        <%= form_with(url: "/items/create_comment", method: "post") do %>
+        <%= form_with(url: :items_create_comment, method: "post") do %>
             <input name="id" type="hidden" value="<%= @item.id%>" />
             <%= label_tag(:description, "Item description:") %>
             <div><textarea name="comment"><%=@item.comment%></textarea></div>
