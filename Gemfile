@@ -37,6 +37,7 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'capybara', '>= 2.15'
   gem 'database_cleaner'
+  gem 'minitest-rails'
 end
 
 group :development do

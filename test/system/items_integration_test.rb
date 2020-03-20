@@ -4,13 +4,23 @@ class ItemsControllerTest < ActionDispatch::IntegrationTest
     post '/items/create',
      params: { description: 'valid_description', category: '1'},
      headers: { 'content-type': 'multipart/form-data' }
-    assert_response :created
+     assert_equal 302, status
   end
 
   test "should get index after updated the requirement comment" do
+    user = User.create(email: "test@testmail.com", password: "test_password")
+    get "/login"
+    assert_equal 200, status
+
+    post "/login", params: { email: user.email, password: user.password }
+    follow_redirect!
+
+    item=Item.create(description: 'valid_description', category_id: 1, status: 1, user_id: user.id )
+
     post '/items/create_comment',
-     params: { id: 1, comment: "test_comment"},
+     params: { id: item.id, comment: "test_comment"},
      headers: { 'content-type': 'multipart/form-data' }
-    assert_response :success
+     follow_redirect!
+     assert_equal 302, status
   end
 end
