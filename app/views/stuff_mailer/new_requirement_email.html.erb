@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Hi, Administrator</h1>
+    </hr>
+    <p>
+    A user has registered a new stuff requirement for the office
+
+    <pre>
+      Requirement: <%= @new_item.description %>
+      Category: <%= @new_item.category.category_name %>
+    </pre>
+
+    The user email is <%= @user.email %>.
+    </p>
+
+    <a href="http://127.0.0.1:3000/items/comment?id=<%= @new_item.id %>">Review Requirement<a/>
+
+    <p>Best Regards.</p>
+  </body>
+</html>
