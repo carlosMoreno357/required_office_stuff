@@ -1,0 +1,12 @@
+Hello <%= @item.user.email %>
+===============================================
+You have received a new comment about your item requirement.
+
+  Requirement: <%= @item.description %>
+  Category: <%= @item.category.category_name %>
+  commenter:  <%= @user.email %>
+
+You can review the requirement in the next link:
+http://127.0.0.1:3000/items/comment?id=<%= @item.id %>
+
+Best regards.

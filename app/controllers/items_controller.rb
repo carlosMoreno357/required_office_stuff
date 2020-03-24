@@ -58,9 +58,10 @@ class ItemsController < ActionController::Base
 
   def comment
     @item=Item.find_by(id: params[:id])
+    @comments= Comment.where(item_id: @item.id)
   end
 
-  def create_comment
+  def create_detail
     item=Item.find_by(id: params[:id])
     item.update(comment: params[:comment])
     redirect_to(root_path)
