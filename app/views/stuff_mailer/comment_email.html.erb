@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Hello <%= @item.user.email %></h1>
+    </hr>
+    <p>
+      You have received a new comment about your item requirement.
+      <pre>
+        Requirement: <%= @item.description %>
+        Category: <%= @item.category.category_name %>
+        commenter:  <%= @user.email %>
+      </pre>
+    </p>
+
+    <a href="http://127.0.0.1:3000/items/comment?id=<%= @item.id %>">See Requirement detail<a/>
+
+    <p>Best Regards.</p>
+  </body>
+</html>

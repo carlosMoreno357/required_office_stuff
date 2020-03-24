@@ -1,16 +1,40 @@
 <!DOCTYPE html>
 <html>
     <head></head>
+    <%= stylesheet_link_tag "application", :media => "all" %>
     <body>
-        <h2>Insert a comment</h2>
+        <h2>Item Detail</h2>
         <%= link_to '<- Back', root_path %>
         <p>For supply: <%= @item.description%></p>
         
-        <%= form_with(url: :items_create_comment, method: "post") do %>
+        <%= form_with(url: :items_create_detail, method: "post") do %>
             <input name="id" type="hidden" value="<%= @item.id%>" />
             <%= label_tag(:description, "Item description:") %>
             <div><textarea name="comment"><%=@item.comment%></textarea></div>
             <%= submit_tag("Save") %>
         <% end %>
+        </hr>
+        
+        <hr> Comments </h4>
+        <ul class="comment_list">
+        <% @comments.each do |comment| %>
+          <div class="comment">
+            <p>  
+              <strong>User: <%= comment.user.email %></strong></br>
+              <%= comment.description %>
+            </p>
+          </div>
+        <% end %>
+        </ul>
+
+        <h3>Leave a comment</h3>
+        <%= form_with(url: :comments_create_comment, method: "post") do %>
+            <input name="item_id" type="hidden" value="<%= @item.id%>" />
+            <%= label_tag(:description, "Comment:") %>
+            <div><textarea name="description"></textarea></div>
+            <%= submit_tag("Send") %>
+        <% end %>
+
+        
     </body>
 </html>

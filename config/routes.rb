@@ -8,7 +8,8 @@ Rails.application.routes.draw do
   get 'items/fulfill', to: "items#fulfill"
 
   post 'items/create', to: "items#create"
-  post 'items/create_comment', to: "items#create_comment"
+  post 'items/create_detail', to: "items#create_detail"
+  post 'comments/create_comment', to:"comments#create"
   
   get '/login' => 'sessions#new'
   post'/login' => 'sessions#create'
