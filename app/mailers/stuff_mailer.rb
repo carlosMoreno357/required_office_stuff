@@ -4,4 +4,9 @@ class StuffMailer < ApplicationMailer
         @new_item = new_item
         mail(to: admin, subject: 'New stuff requirement')
       end
+      def status_change_email(user,item)
+        @user = user
+        @item = item
+        mail(to: @user.email, subject: 'New stuff requirement')
+      end
 end

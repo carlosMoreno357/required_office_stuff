@@ -1,5 +1,13 @@
 Hi, Administrator
 ===============================================
 A user has registered a new stuff requirement for the office
+
+  Requirement: <%= @new_item.description %>
+  Category: <%= @new_item.category.category_name %>
+
 The user email is <%= @user.email %>.
+
+You can review the requirement in the next link:
+http://127.0.0.1:3000/items/comment?id=<%= @new_item.id %>
+
 Best regards.

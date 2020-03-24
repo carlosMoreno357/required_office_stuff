@@ -45,17 +45,19 @@ class ItemsController < ActionController::Base
   def fulfill
     item=Item.find_by(id: params[:id])
     item.update(status: 0)
+    StuffMailer.status_change_email(User.find_by(id: current_user.id),item).deliver_now
     redirect_to(root_path)
   end
 
   def dismiss
     item=Item.find_by(id: params[:id])
     item.update(status: 2)
+    StuffMailer.status_change_email(User.find_by(id: current_user.id),item).deliver_now
     redirect_to(root_path)
   end
 
   def comment
-    @item=item=Item.find_by(id: params[:id])
+    @item=Item.find_by(id: params[:id])
   end
 
   def create_comment
