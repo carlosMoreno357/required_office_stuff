@@ -45,14 +45,14 @@ class ItemsController < ActionController::Base
   def fulfill
     item=Item.find_by(id: params[:id])
     item.update(status: 0)
-    StuffMailer.status_change_email(User.find_by(id: current_user.id),item).deliver_now
+    MailService.status_change_mail(User.find_by(id: current_user.id),item)
     redirect_to(root_path)
   end
 
   def dismiss
     item=Item.find_by(id: params[:id])
     item.update(status: 2)
-    StuffMailer.status_change_email(User.find_by(id: current_user.id),item).deliver_now
+    MailService.status_change_mail(User.find_by(id: current_user.id),item)
     redirect_to(root_path)
   end
 
@@ -84,7 +84,7 @@ class ItemsController < ActionController::Base
   def send_requirements_to_all_admins(user,new_item)
     administrators= User.select(:email).where(admin:true)
     administrators.each do |admin|
-      StuffMailer.new_requirement_email(User.find_by(id: current_user.id),admin.email,new_item).deliver_now
+      MailService.new_requirement_mail(User.find_by(id: current_user.id),admin.email,new_item)
     end
   end
 
