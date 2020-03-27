@@ -3,12 +3,12 @@ Rails.application.routes.draw do
   get 'items/index', to: 'items#index'
 
   get 'items/new', to: "items#new"
-  get 'items/comment', to: "items#comment"
+  get 'items/details', to: "items#details"
   get 'items/dismiss', to: "items#dismiss"
   get 'items/fulfill', to: "items#fulfill"
 
   post 'items/create', to: "items#create"
-  post 'items/create_detail', to: "items#create_detail"
+  post 'items/create_details', to: "items#create_details"
   post 'comments/create_comment', to:"comments#create"
   
   get '/login' => 'sessions#new'

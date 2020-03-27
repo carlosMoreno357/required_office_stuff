@@ -8,10 +8,10 @@
         <%= form_with(url: :items_index, method: "get") do %>
             <label for="filter">Filter:</label>
             <select name="filter" id="filter">
-                <option value = "0" selected>- none -</option>
+                <option selected value="3" >- none -</option>
                 <option value = "1">Open</option>
-                <option value = "2">Fulfilled</option>
-                <option value = "3">Dismissed</option>
+                <option value = "0">Fulfilled</option>
+                <option value = "2">Dismissed</option>
             </select>
          <%= submit_tag("Filter") %>
         <% end %>
@@ -33,7 +33,7 @@
                 <td colspan="4"><%= item.status %> </td>
                 <td colspan="2"><%= link_to 'Dismiss', "/items/dismiss?id=#{item.id}" %><td>
                 <td colspan="2"><%= link_to 'Fulfill', "/items/fulfill?id=#{item.id}" %><td>
-                <td colspan="2"><%= link_to 'Detail', "/items/comment?id=#{item.id}" %><td>
+                <td colspan="2"><%= link_to 'Details', "/items/details?id=#{item.id}" %><td>
                 </tr>
             <% end %>
         </table>
