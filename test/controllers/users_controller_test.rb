@@ -1,5 +1,5 @@
 require 'test_helper'
-class USersControllerTest < ActionDispatch::IntegrationTest
+class UsersControllerTest < ActionDispatch::IntegrationTest
   test "Should get form to fill new user data" do
     get "/signup"
     assert_equal 200, status

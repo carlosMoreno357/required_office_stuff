@@ -142,7 +142,63 @@ class ItemsControllerTest < ActionDispatch::IntegrationTest
     post "/items/create", params: { description: "test", category_id: 1, status: 1, user_id:user.id}
     follow_redirect!
     assert_equal 302, status
+  end
 
+  test "user changes item status to fulfilled" do
+    user = User.create(email: "test@testmail.com", password: "test_password", admin:true)
+    get "/login"
+    assert_equal 200, status
+
+    post "/login", params: { email: user.email, password: user.password }
+    follow_redirect!
+
+    item=Item.create(description: 'valid_description', category_id: 1, status: 1, user_id: user.id )
+    
+    get "/items/fulfill?id=#{item.id}"
+    assert_equal 302, status
+
+  end
+
+  test "user changes item status to dismissed" do
+    user = User.create(email: "test@testmail.com", password: "test_password", admin:true)
+    get "/login"
+    assert_equal 200, status
+
+    post "/login", params: { email: user.email, password: user.password }
+    follow_redirect!
+
+    item=Item.create(description: 'valid_description', category_id: 1, status: 1, user_id: user.id )
+    
+    get "/items/dismiss?id=#{item.id}"
+    assert_equal 302, status
+  end
+
+  test "user gets item details" do
+    user = User.create(email: "test@testmail.com", password: "test_password", admin:true)
+    get "/login"
+    assert_equal 200, status
+
+    post "/login", params: { email: user.email, password: user.password }
+    follow_redirect!
+
+    item=Item.create(description: 'valid_description', category_id: 1, status: 1, user_id: user.id )
+    
+    get "/items/details?id=#{item.id}"
+    assert_equal 200, status
+  end
+
+  test "user updates item details" do
+    user = User.create(email: "test@testmail.com", password: "test_password", admin:true)
+    get "/login"
+    assert_equal 200, status
+
+    post "/login", params: { email: user.email, password: user.password }
+    follow_redirect!
+
+    item=Item.create(description: 'valid_description', category_id: 1, status: 1, user_id: user.id )
+    
+    post "/items/create_details", params: { id: item.id, details: "item details" }
+    assert_equal 302, status
   end
 
 end
