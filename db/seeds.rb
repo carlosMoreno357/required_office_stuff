@@ -11,3 +11,7 @@ categories = Category.create([
     {category_name: "general cleaning supplies", colour:"#498467"},
     {category_name: "bathroom cleaning supplies", colour:"#592941"},
 ])
+
+user = User.create([
+    {email: 'admin@stuff.com', password:'abcd1234', admin:true}
+])
