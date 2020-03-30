@@ -7,10 +7,10 @@
         <%= link_to '<- Back', root_path %>
         <p>For supply: <%= @item.description%></p>
         
-        <%= form_with(url: :items_create_detail, method: "post") do %>
+        <%= form_with(url: :items_create_details, method: "post") do %>
             <input name="id" type="hidden" value="<%= @item.id%>" />
-            <%= label_tag(:description, "Item description:") %>
-            <div><textarea name="comment"><%=@item.comment%></textarea></div>
+            <%= label_tag(:description, "Item details:") %>
+            <div><textarea name="details"><%=@item.details%></textarea></div>
             <%= submit_tag("Save") %>
         <% end %>
         </hr>
