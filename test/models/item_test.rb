@@ -15,6 +15,6 @@ class ItemTest < ActiveSupport::TestCase
   test 'item updated with a valid comment' do
     item=Item.create(description: 'valid_description', category_id: 1, status: 1, user_id: 1)
     update = item.update(details:'test comment')
-    assert update_truthy
+    assert_equal update, true
   end
 end
