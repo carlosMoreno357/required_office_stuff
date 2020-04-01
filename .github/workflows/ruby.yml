@@ -60,7 +60,11 @@ jobs:
       run: |
         gem install bundler
         bundle install --jobs 4 --retry 3
-        bin/rails db:migrate:reset
+        bin/rails db:drop
+        bin/rails db:drop
+        bin/rails db:schema:load
+        bin/rails db:migrate
+        bin/rails db:seeed
         yarn install --check-files
         bundle exec rails webpacker:compile
 
