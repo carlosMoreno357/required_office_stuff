@@ -22,7 +22,7 @@ test:
   adapter: postgresql
   user: postgres
   password: 12345
-  database: db/stuff_test
+  database: db
 
 production:
   <<: *default
