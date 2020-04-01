@@ -7,6 +7,6 @@ You have received a new comment about your item requirement.
   commenter:  <%= @user.email %>
 
 You can review the requirement in the next link:
-http://127.0.0.1:3000/items/comment?id=<%= @item.id %>
+<%=ENV['SITE_URL']%>/items/comment?id=<%= @item.id %>
 
 Best regards.

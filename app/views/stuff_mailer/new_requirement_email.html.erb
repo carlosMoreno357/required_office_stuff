@@ -17,7 +17,7 @@
     The user email is <%= @user.email %>.
     </p>
 
-    <a href="<%= @new_item.id %>/items/comment?id=<%= @new_item.id %>">Review Requirement<a/>
+    <a href="<%=ENV['SITE_URL']%>/items/comment?id=<%= @new_item.id %>">Review Requirement<a/>
 
     <p>Best Regards.</p>
   </body>
