@@ -1,4 +1,8 @@
 require 'simplecov'
+require 'knapsack_pro'
+knapsack_pro_adapter = KnapsackPro::Adapters::MinitestAdapter.bind
+knapsack_pro_adapter.set_test_helper_path(__FILE__)
+
 SimpleCov.start 'rails' do
   filters.clear # This will remove the :root_filter and :bundler_filter that come via simplecov's defaults
   add_filter '/spec/'
