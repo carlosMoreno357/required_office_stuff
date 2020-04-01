@@ -20,6 +20,8 @@ development:
 test:
   <<: *default
   adapter: postgresql
+  user: postgres
+  password: 12345
   database: db/stuff_test
 
 production:
