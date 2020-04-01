@@ -38,6 +38,7 @@ group :development, :test do
   gem 'capybara', '>= 2.15'
   gem 'database_cleaner'
   gem 'minitest-rails'
+  gem 'knapsack_pro'
 end
 
 group :development do
