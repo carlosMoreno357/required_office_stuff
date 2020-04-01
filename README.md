@@ -9,7 +9,3 @@ To set an user as an administrator, after its registration, the `:admin` databas
 
 ### E-mail sender feature
 Every time users need to be notified by an item request or status change of the mentioned, they will received an email from `tango.stuff.requirements@gmail.com` address
-
-### Test suite results
-You can check on the test suite results in the image below:
-![Tests_result](https://i.imgur.com/LrVWpFG.png)
