@@ -1,6 +1,6 @@
 # README
 
-## Required office stuff
+## Required office stuff ([Site]: https://gentle-island-80820.herokuapp.com/)
 This system allows to request office supplies for different categories, along with a comment posting feature and user the capability to edit users and change the requested items status.
 
 ### Accounts management
