@@ -10,7 +10,7 @@ jobs:
   vm-job:
     runs-on: ubuntu-latest
 
-    sservices:
+    services:
       db:
         image: postgres
         env:
