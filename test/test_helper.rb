@@ -3,29 +3,20 @@ require 'knapsack_pro'
 
 SimpleCov.start 'rails' do
   filters.clear # This will remove the :root_filter and :bundler_filter that come via simplecov's defaults
-  add_filter '/spec/'
-  add_filter '/config/'
   add_filter '/vendor/'
-  add_filter '/jobs/'
-  add_filter '/mailers/'
-  add_filter '/channels/'
-  add_filter '/helpers/'
+  add_filter '/config/'
+  add_filter 'app/channels'
+  add_filter 'app/helpers'
+  add_filter 'app/controllers/coverages_controller.rb'
   add_group 'Controllers', 'app/controllers'
   add_group 'Models', 'app/models'
+  add_group 'Services', 'app/services'
 end
 SimpleCov.root("public")
 ENV['RAILS_ENV'] ||= 'test'
 require_relative '../config/environment'
+#require 'sidekiq/testing'
 require 'rails/test_help'
 
 knapsack_pro_adapter = KnapsackPro::Adapters::MinitestAdapter.bind
 knapsack_pro_adapter.set_test_helper_path(__FILE__)
-
-class ActiveSupport::TestCase
-  # Run tests in parallel with specified workers
-
-  # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical order.
-  fixtures :all
-
-  # Add more helper methods to be used by all tests here...
-end
