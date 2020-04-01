@@ -17,8 +17,8 @@ class ItemsControllerTest < ActionDispatch::IntegrationTest
 
     item=Item.create(description: 'valid_description', category_id: 1, status: 1, user_id: user.id )
 
-    post '/items/create_comment',
-     params: { id: item.id, comment: "test_comment"},
+    post '/items/create_details',
+     params: { id: item.id, details: "test_details"},
      headers: { 'content-type': 'multipart/form-data' }
      follow_redirect!
      assert_equal 302, status
