@@ -17,7 +17,7 @@ class ItemsControllerTest < ActionDispatch::IntegrationTest
 
     item=Item.create(description: 'valid_description', category_id: 1, status: 1, user_id: user.id )
 
-    post :items_create_details,
+    post '/items/create_details',
      params: { id: item.id, details: "test_details"},
      headers: { 'content-type': 'multipart/form-data' }
      follow_redirect!
