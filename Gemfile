@@ -38,7 +38,6 @@ group :development, :test do
   gem 'capybara', '>= 2.15'
   gem 'database_cleaner'
   gem 'minitest-rails'
-  gem 'sqlite3'
 end
 
 group :development do
@@ -49,6 +48,7 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'pry'
+  gem 'pg'
 end
 
 group :test do
