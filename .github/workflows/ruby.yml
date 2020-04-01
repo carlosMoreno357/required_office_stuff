@@ -64,7 +64,7 @@ jobs:
         bin/rails db:create
         bin/rails db:schema:load
         bin/rails db:migrate
-        bin/rails db:seeed
+        bin/rails db:seed
         yarn install --check-files
         bundle exec rails webpacker:compile
 
