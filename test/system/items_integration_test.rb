@@ -9,7 +9,7 @@ class ItemsControllerTest < ActionDispatch::IntegrationTest
 
   test "should get index after updated the requirement details" do
     user = User.create(email: "test@testmail.com", password: "test_password")
-    sleep 1.5
+
     get "/login"
     assert_equal 200, status
 
@@ -17,8 +17,7 @@ class ItemsControllerTest < ActionDispatch::IntegrationTest
     follow_redirect!
 
     item=Item.create(description: 'valid_description', category_id: 1, status: 1, user_id: user.id )
-    sleep 1.5
-
+ 
     post '/items/create_details',
      params: { id: item.id, details: "test_details"},
      headers: { 'content-type': 'multipart/form-data' }
