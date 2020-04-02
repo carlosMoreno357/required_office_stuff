@@ -1,4 +1,3 @@
-require 'test_helper'
 class ItemsControllerTest < ActionDispatch::IntegrationTest
   test "should get index" do
     user = User.create(email: "test@testmail.com", password: "test_password")
