@@ -22,7 +22,7 @@ class SessionsControllerTest < ActionDispatch::IntegrationTest
   test "User tries to access Items Index without been logged in" do
     get "/items/index"
     follow_redirect!
-    assert_equal 302, status
+    assert_equal 200, status
   end
   
   test "Users logs out successfully" do

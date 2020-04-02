@@ -7,18 +7,21 @@ class ItemsControllerTest < ActionDispatch::IntegrationTest
      assert_equal 302, status
   end
 
-  test "should get index after updated the requirement comment" do
+  test "should get index after updated the requirement details" do
+    @category = Category.create(category_name:'test category', colour: "#F02D3A")
+    sleep 1.5
     user = User.create(email: "test@testmail.com", password: "test_password")
+    sleep 1.5
     get "/login"
     assert_equal 200, status
-
+    sleep 1.5
     post "/login", params: { email: user.email, password: user.password }
     follow_redirect!
-
-    item=Item.create(description: 'valid_description', category_id: 1, status: 1, user_id: user.id )
-
-    post '/items/create_comment',
-     params: { id: item.id, comment: "test_comment"},
+    sleep 1.5
+    item=Item.create(description: 'valid_description', category_id: @category.id, status: 1, user_id: user.id )
+    sleep 1.5
+    post '/items/create_details',
+     params: { id: item.id, details: "test_details"},
      headers: { 'content-type': 'multipart/form-data' }
      follow_redirect!
      assert_equal 302, status

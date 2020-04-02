@@ -7,18 +7,76 @@ on:
     branches: [ master ]
 
 jobs:
-  build:
-
+  vm-job:
     runs-on: ubuntu-latest
 
+    services:
+      db:
+        image: postgres
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: 12345
+          POSTGRES_DB: db
+        ports: ['5432:5432']
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+      redis:
+        image: redis
+        ports: ['6379:6379']
+        options: --entrypoint redis-server
+
+    strategy:
+      fail-fast: false
+      matrix:
+        ci_node_total: [2]
+        ci_node_index: [0, 1]
+
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v1
+
     - name: Set up Ruby 2.7.0
       uses: actions/setup-ruby@v1
       with:
         ruby-version: 2.7.0
-    - name: Build and test with Rake
+        
+    - uses: actions/cache@v1
+      with:
+        path: vendor/bundle
+        key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-gems-
+    - name: install PostgreSQL client
+      run: sudo apt-get install libpq-dev
+
+    - name: Build and create DB
+      env:
+        PGHOST: localhost
+        PGUSER: postgres
+        PGPORT: ${{ job.services.postgres.ports[5432] }}
+        RAILS_ENV: test
       run: |
         gem install bundler
         bundle install --jobs 4 --retry 3
-        bundle exec rake
+        bin/rails db:drop
+        bin/rails db:create
+        bin/rails db:schema:load
+        bin/rails db:migrate
+        bin/rails db:seed
+        yarn install --check-files
+        bundle exec rails webpacker:compile
+
+    - name: Run tests
+      env:
+        PGHOST: localhost
+        PGUSER: postgres
+        PGPASSWORD: 12345
+        PGPORT: ${{ job.services.postgres.ports[5432] }}
+        RAILS_ENV: test
+        KNAPSACK_PRO_TEST_SUITE_TOKEN_MINITEST: ${{ secrets.KNAPSACK_PRO_TEST_SUITE_TOKEN_MINITEST }}
+        KNAPSACK_PRO_CI_NODE_TOTAL: ${{ matrix.ci_node_total }}
+        KNAPSACK_PRO_CI_NODE_INDEX: ${{ matrix.ci_node_index }}
+      run: |
+        bundle exec rake knapsack_pro:minitest
