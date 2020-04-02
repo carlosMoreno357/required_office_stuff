@@ -146,11 +146,13 @@ class ItemsControllerTest < ActionDispatch::IntegrationTest
 
   test "user changes item status to fulfilled" do
     user = User.create(email: "test@testmail.com", password: "test_password", admin:true)
+    sleep 1.5
     get "/login"
     assert_equal 200, status
 
     post "/login", params: { email: user.email, password: user.password }
     follow_redirect!
+    sleep 2
 
     item=Item.create(description: 'valid_description', category_id: 1, status: 1, user_id: user.id )
     
