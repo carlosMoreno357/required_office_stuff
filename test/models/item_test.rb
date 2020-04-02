@@ -1,4 +1,3 @@
-
 class ItemTest < ActiveSupport::TestCase
   test 'item has a valid description, category, status and belongs to a user' do
     user = User.create(email: "test@testmail.com", password: "test_password")

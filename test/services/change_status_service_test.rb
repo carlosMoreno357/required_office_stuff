@@ -1,4 +1,3 @@
-require 'test_helper'
 class ChangeStatusServiceTest < ActiveSupport::TestCase
   test 'Item status can be changed to fulfill by the service' do
     user = User.create(email: "test@testmail.com", password: "test_password", admin: true)
