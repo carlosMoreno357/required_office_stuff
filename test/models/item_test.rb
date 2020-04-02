@@ -1,4 +1,4 @@
-require 'test_helper'
+
 class ItemTest < ActiveSupport::TestCase
   test 'item has a valid description, category, status and belongs to a user' do
     user = User.create(email: "test@testmail.com", password: "test_password")
@@ -14,7 +14,7 @@ class ItemTest < ActiveSupport::TestCase
 
   test 'item updated with a valid comment' do
     item=Item.create(description: 'valid_description', category_id: 1, status: 1, user_id: 1)
-    update = Item.last.update(details:'test comment')
+    update = item.update(details:'test comment')
     assert update
   end
 end
