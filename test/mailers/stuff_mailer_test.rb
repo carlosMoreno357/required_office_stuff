@@ -9,7 +9,7 @@ class StuffMailerTest < ActionMailer::TestCase
     sleep 1.5
     @user = User.create(email: 'carlos.moreno@tangosource.com', password: '1234')
     sleep 1.5
-    @item=Item.create(description: 'valid_description', category_id: 1, status: 1, user_id: @user.id)
+    @item=Item.create(description: 'valid_description', category_id: @category.id, status: 1, user_id: @user.id)
     sleep 1.5
     email = StuffMailer.new_requirement_email(@user,@admin.email,@item).deliver_now
     assert_emails 1
