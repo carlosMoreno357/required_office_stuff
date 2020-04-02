@@ -1,3 +1,4 @@
+![Ruby](https://github.com/carlosMoreno357/required_office_stuff/workflows/Ruby/badge.svg?branch=master)
 # README
 
 ## Required office stuff
